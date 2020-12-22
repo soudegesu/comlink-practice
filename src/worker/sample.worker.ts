@@ -3,8 +3,9 @@ export class Sample {
     console.log('instantinate');
   }
 
-  init() {
-    console.log('init');
+  init(data: any) {
+    console.log(data);
+    console.log(`init:`);
   }
 
   update() {

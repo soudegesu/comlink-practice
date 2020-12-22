@@ -4,6 +4,7 @@ import './App.css';
 import TopPage from './pages/TopPage';
 // @ts-ignore
 import SampleWorker from 'comlink-loader!./worker/sample.worker';
+import { transfer } from 'comlink';
 
 const App = () => {
   useEffect(() => {
@@ -11,7 +12,7 @@ const App = () => {
       const worker = new SampleWorker();
       console.log(worker);
       const sample = await new worker.Sample();
-      sample.init();
+      sample.init(transfer({ num: 1 }, []));
     })();
   }, []);
 
